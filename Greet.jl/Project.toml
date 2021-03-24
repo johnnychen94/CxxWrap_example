@@ -1,0 +1,13 @@
+name = "Greet"
+uuid = "a09fc81d-aa75-5fe9-8630-4744c3626500"
+version = "0.0.1"
+
+[deps]
+CxxWrap = "1f15a43c-97ca-5a2a-ae31-89f07a497df4"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
+

@@ -1,13 +1,7 @@
-#include <string>
+#include<iostream>
+#include "greet.hpp"
 
-#include "jlcxx/jlcxx.hpp"
-
-std::string greet()
-{
-   return "hello, world";
+std::string greet(){
+    return "Hello, world";
 }
 
-JLCXX_MODULE define_julia_module(jlcxx::Module& mod)
-{
-  mod.method("greet", &greet);
-}
