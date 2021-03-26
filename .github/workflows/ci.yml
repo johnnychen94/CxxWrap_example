@@ -36,9 +36,9 @@ jobs:
             ${{ runner.os }}-test-
             ${{ runner.os }}-
 
-      # FindJulia.cmake requires CxxWrap installed in root project
       - name: "Unit Test"
         run: |
           julia --project=Greet.jl -e "using Pkg; Pkg.instantiate()"
-          julia -e 'using Pkg; pkg"add CxxWrap"'
-          make && make test
+          cmake -S . -B build
+          cmake --build build -j$(nproc)
+          bash test.sh
