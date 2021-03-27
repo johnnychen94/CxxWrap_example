@@ -4,4 +4,3 @@
 std::string greet(){
     return "Hello, world";
 }
-

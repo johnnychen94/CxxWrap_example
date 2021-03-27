@@ -15,18 +15,4 @@ if (NOT jlcxx_FOUND)
     FetchContent_MakeAvailable(jlcxx)
 endif ()
 
-# JlCxx requires the library to be built as shared
-add_library(greet_jlcxx SHARED greet.cpp)
-target_include_directories(greet_jlcxx
-    PRIVATE ${greet_SOURCE_DIR}
-    PRIVATE ${jlcxx_SOURCE_DIR}/include)
-target_link_libraries(greet_jlcxx
-    PRIVATE greet
-    PRIVATE cxxwrap_julia)
-
-install(TARGETS
-    greet_jlcxx
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-    RUNTIME DESTINATION lib
-)
+add_subdirectory(src)
